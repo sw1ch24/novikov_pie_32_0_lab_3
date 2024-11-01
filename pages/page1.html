@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Лабораторная работа №3</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Новиков Степан">
+    <meta name="reply-to" content="stepannov1110@gmail.com">
+    <meta name="description" content="HTML-страница с четырьмя подключенными скриптами">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../script/script1.js"></script>
+    <style>
+    @font-face {
+		font-family:'Roboto';
+		src:
+	    url("../assets/fonts/Roboto/Roboto-Regular.ttf");
+	}
+    body {
+        font-family:'Roboto';
+    }
+    </style>
+</head>
+<body style="background-color: #d5ccc7" >
+    <nav style="background-color: #28262b;" class="navbar navbar-nav-scroll navbar-expand-sm navbar-dark">
+        <div class="container-fluid">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Главная страница</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Задание №1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="page2.html">Задание №2</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="page3.html">Задание №3</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="page4.html">Задание №4</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      
+<div style="background-color: #a9a29c;" class="p-5 text-center">
+    <h1>Лаборатная работа №3</h1>
+    <p>Выполнил Новиков Степан гр. ПИЭ-32</p> 
+</div>
+
+<div class="container mt-5 text-center">
+    <h2>Задание №1</h2>
+    <p>Во всех заданиях данной группы требуется вывести текст «TRUE», если 
+        приведенное высказывание для предложенных исходных данных является истинным, 
+        и текст «FALSE» в противном случае. Все числа, для которых указано количество цифр 
+        (двузначное число, трехзначное число и т. д.), считаются целыми положительными.</p>
+    <h4 class="pt-3">Условие задания:</h4>
+    <p>Даны три целых числа: A, B, C. Проверить истинность высказывания: 
+        «Ровно два из чисел A, B, C являются положительными»</p>
+    <h4 class="pt-3">Скрипт:</h4>
+    <p>Введите число A: <input type="number" id="input_A1"></p>
+    <p>Введите число B: <input type="number" id="input_B1"></p>
+    <p>Введите число C: <input type="number" id="input_C1"></p>
+    <p><button id='btn1' onclick='task1()'>Выполнить проверку</button></p>
+    <p id="output_task1"></p>
+</div>
+
+<div style="background-color: #333333;" class="mt-5 p-4 text-white text-center">
+    <a href="mailto:stepannov1110@gmail.com"><p>stepannov1110@gmail.com</p></a>
+</div>
+</body>
+</html>

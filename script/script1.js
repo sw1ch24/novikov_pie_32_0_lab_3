@@ -1,30 +1,17 @@
-document.getElementById('btn1').onclick = task1;    // функция обработки нажатия на кнопку
+document.getElementById('btn1').onclick = task1;                // обработка нажатия на кнопку выполнения скрипта
 function task1(){
-    const A = prompt("Введите число А: ");         // ввод чисел
-    if (isNaN(A)) {                                // проверка на "дурака"
-        alert('Неверный ввод');
-        throw new Error('Неверный ввод');
+    let A = document.getElementById('input_A1').value;          // обработка инпута и преобразование строки в число
+    let B = document.getElementById('input_B1').value;
+    let C = document.getElementById('input_C1').value;
+    if (isNaN(A) || A =='' || isNaN(B) || B =='' || isNaN(C) || C =='') {
+        document.getElementById('output_task1').innerHTML = '';  // удаление вывода предыдущего вывода скрипта
+        alert('Неверный ввод!');                                // проверка на неправильный ввод
+        return;
     } 
-    const B = prompt("Введите число B: ");
-    if (isNaN(B)) {                                
-        alert('Неверный ввод');
-        throw new Error('Неверный ввод');
-    } 
-    const C = prompt("Введите число C: ");
-    if (isNaN(C)) {
-        alert('Неверный ввод');
-        throw new Error('Неверный ввод');
-    } 
-    const arr = [A, B, C];                          // создание массива из чисел
-    let counter = 0                                 
-    for(let i = 0; i < 3; i++) {                    // цикл прибавляет 1, если число положительное
-        if (arr[i] > 0) {
-            counter += 1;
-        }
-    }
-    if (counter == 2){                              
-        alert(`A= ${A}, B=${B}, C=${C}\nTrue`);     // вывод 'True', если два числа положительны
-    } else {                                        
-        alert(`A= ${A}, B=${B}, C=${C}\nFalse`);    // вывод 'False' в ином случае
+    if ((A > 0) + (B > 0) + (C > 0) == 2) {
+        document.getElementById('output_task1').innerHTML = 'True';   // вывод 'True', если два числа положительны
+        return;
+    } else { 
+        document.getElementById('output_task1').innerHTML = 'False';  // вывод 'False' в ином случае                                                                                          
     }
 }

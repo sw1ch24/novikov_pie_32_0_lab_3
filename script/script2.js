@@ -1,32 +1,25 @@
-document.getElementById('btn2').onclick = task2;           // функция обработки нажатия на кнопку
-function task2(){   
-    const A = prompt("Введите число А: ");                 // ввод чисел
-    if (isNaN(A)) {                                        // проверка на "дурака"
-        alert('Неверный ввод');
-        throw new Error('Неверный ввод');
-    } 
-    const B = prompt("Введите число B: ");
-    if (isNaN(B)) {                                         
-        alert('Неверный ввод');
-        throw new Error('Неверный ввод');
-    } 
-    const C = prompt("Введите число C: ");
-    if (isNaN(C)) {                                         
-        alert('Неверный ввод');
-        throw new Error('Неверный ввод');
-    } 
-    let arr = [A, B, C];                                    // создание массива из чисел
-    let min_var = Infinity;                                 // нахождение минимального элемента массива
-    for(let i = 0; i < 3; i++) {
-        let item = arr[i];
-        if (item < min_var) {
-            min_var = item;
-        }
+document.getElementById('btn2').onclick = task2;                // обработка нажатия на кнопку выполнения скрипта
+function task2(){
+    let A = document.getElementById('input_A2').value;          // обработка инпута чисел
+    let B = document.getElementById('input_B2').value;
+    let C = document.getElementById('input_C2').value;
+    if (isNaN(A) || A =='' || isNaN(B) || B =='' || isNaN(C) || C =='') {
+        document.getElementById('output_task2').innerHTML = '';  // удаление вывода предыдущего вывода скрипта
+        alert('Неверный ввод!');                                // проверка на неправильный ввод
+        return;
+    } else {
+        A = Number(A);
+        B = Number(B);
+        C = Number(C);
     }
-    arr.splice(arr.indexOf(min_var), 1);                    // удаление минимального элемента из массива 
-    const sum = ((+arr[0]) + (+arr[1])).toFixed(2);                      // сложение оставшихся двух чисел
-    alert(`A= ${A}, B=${B}, C=${C}\n`+                      // вывод суммы двух наибольших чисел
-        `Сумма двух наибольших чисел равна: ${sum}`);       
+    let sum;
+    if ((A <= B) && (A <= C)) {                             // поиск наименьшей переменной и суммирование двух оставшихся
+        sum = B + C;
+    } else if ((B <= A) && (B <= C)){
+        sum = A + C;
+    } else {
+        sum = A + B;
+    }
+    document.getElementById('output_task2').innerHTML = 
+    `Сумма двух наибольших чисел равна: ${sum}`;            // вывод суммы двух наибольших чисел               
 }
-
-    
